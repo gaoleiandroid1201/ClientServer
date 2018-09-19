@@ -4,10 +4,10 @@ import java.io.UnsupportedEncodingException;
 import java.sql.*;
 
 public class DBUtil {
-	private static String url="jdbc:mysql://localhost:3307/Account";
+	private static String url="jdbc:mysql://127.0.0.1:3306/Account";
 	private static String driverClass="com.mysql.jdbc.Driver";
 	private static String username="root";
-	private static String password="123456";
+	private static String password="12345678";
 	private static Connection conn;
 	//装载驱动
 	static{
