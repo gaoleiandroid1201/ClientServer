@@ -38,19 +38,18 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ")
-				.append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String ID = request.getParameter("ID");
 		String PW = request.getParameter("PW");
 		System.out.println("ID----------------" + ID);
@@ -75,12 +74,11 @@ public class Login extends HttpServlet {
 				// 然后使用GB2312字符集解码指定的字节数组
 				try {
 					name = new String(name.getBytes("ISO-8859-1"), "GB2312");
-					password = new String(password.getBytes("ISO-8859-1"),
-							"GB2312");
-					if(sex !=null)
-					sex = new String(sex.getBytes("ISO-8859-1"), "GB2312");
-					if(photo !=null)
-					photo = new String(photo.getBytes("ISO-8859-1"), "GB2312");
+					password = new String(password.getBytes("ISO-8859-1"), "GB2312");
+					if (sex != null)
+						sex = new String(sex.getBytes("ISO-8859-1"), "GB2312");
+					if (photo != null)
+						photo = new String(photo.getBytes("ISO-8859-1"), "GB2312");
 					user.setName(name);
 					user.setSex(sex);
 					user.setPhoto(photo);
@@ -96,8 +94,8 @@ public class Login extends HttpServlet {
 					map.put("user", user);
 					out.print(JSON.toJSONString(map));
 					return;
-				}else{
-					
+				} else {
+
 				}
 			}
 			Map<String, Object> map = new HashMap<>();
